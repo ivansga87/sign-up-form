@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="card">
+      <div id="imageContainer">
+        <img id="plantsImg" src="plants-pic.jpg" alt="" />
+        <div id="banner">
+          <img id="logo" src="odin-lined.png" alt="" />
+          <p>ODIN</p>
+        </div>
+      </div>
+      <div id="form">
+        <div class="container" id="messageContainer">
+          <p>
+            This is not a real online service! You know you need something<br />
+            like this in your life to help realize your deepest dreams. <br />
+            Sign up <span>now</span> to get started.
+          </p>
+          <p>You <span>know</span> you want to.</p>
+        </div>
+        <div class="container" id="formFields">
+          <form id="myForm" action="post">
+            <div id="title">
+              <h1>Let's do this!</h1>
+            </div>
+            <div id="inputs">
+              <div class="formSection">
+                <label for="name">FIRST NAME</label>
+                <input type="text" id="name" required />
+                <p id="nameError" hidden>Must be at least 2 characters</p>
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" required placeholder="email@domain.com"/>
+                <p id="emailError" hidden>Please use correct format</p>
+                <label for="password">PASSWORD</label>
+                <input type="password" id="password" />
+                <p id="passwordError" hidden>Must be at least 8 characters long</p>
+              </div>
+              <div class="formSection">
+                <label for="lastName">LAST NAME</label>
+                <input type="text" id="lastName" required/>
+                <p id="lastNameError" hidden>Must be at least 2 charaters</p>
+                <label for="phone">PHONE NUMBER</label>
+                <input type="tel" id="phone" placeholder="(123) 345-6789" />
+                <p id="phoneError" hidden>Please use correct format</p>
+                <label for="confirmPassword">CONFIRM PASSWORD</label>
+                <input type="password" id="confirmPassword" required />
+                <p id="confirmPasswordError" hidden>Passwords don't match</p>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="container" id="buttonContainer">
+          <button form="myForm" type="submit" >Create Account</button>
+          <p>Already have an account? <a href="#index.html">Log in</a></p>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
