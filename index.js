@@ -1,95 +1,113 @@
-let firstName = document.querySelector("#name");
-let lastName = document.querySelector("#lastName");
-let email = document.querySelector("#email")
-let password = document.querySelector("#password")
-let confirmPassword = document.querySelector("#confirmPassword")
-let firstNameError = document.querySelector("#nameError")
-let lastNameError = document.querySelector("#lastNameError")
-let emailError = document.querySelector("#emailError")
-let passwordError = document.querySelector("#passwordError")
-let confirmPasswordError = document.querySelector("#confirmPasswordError")
-let button = document.querySelector("button")
-let ready = false;
-button.addEventListener("click", (event) => {
-    event.preventDefault();
-    if(!ready){
-        alert("Please review and correct mistakes")
-    }else location.reload() 
-})
-
+const firstName = document.querySelector("#name");
+const lastName = document.querySelector("#lastName");
+const email = document.querySelector("#email")
+const telInput = document.querySelector('input[type="tel"]');
+const password = document.querySelector("#password")
+const confirmPassword = document.querySelector("#confirmPassword")
+const firstNameError = document.querySelector("#nameError")
+const lastNameError = document.querySelector("#lastNameError")
+const emailError = document.querySelector("#emailError")
+const passwordError = document.querySelector("#passwordError")
+const confirmPasswordError = document.querySelector("#confirmPasswordError")
+const button = document.querySelector("button")
+const errorMessages = document.querySelectorAll(".error-text")
+const inputs = document.querySelectorAll("input")
+ 
 firstName.addEventListener("input", () =>{
     if(firstName.value.length >= 2){
-        firstNameError.hidden = true;
-        firstName.classList.remove("invalid")
         firstName.classList.add("valid");
-        ready = true;
+        firstName.classList.remove("invalid");
+        firstNameError.hidden = true;
+        
     }
     else {
-        firstName.classList.remove("valid")
+        firstName.classList.add("invalid");
+        firstName.classList.remove("valid");
         firstNameError.hidden = false;
-        firstName.classList.add("invalid")
-        ready = false;
+        
     }
 })
 
 
 lastName.addEventListener("input", () =>{
     if(lastName.value.length >= 2){
-        lastNameError.hidden = true;
-        lastName.classList.remove("invalid")
         lastName.classList.add("valid");
-        ready = true;
+        lastName.classList.remove("invalid");
+        lastNameError.hidden = true;
+        
     }
     else {
-        lastName.classList.remove("valid")
+        lastName.classList.add("invalid");
+        lastName.classList.remove("valid");
         lastNameError.hidden = false;
-        lastName.classList.add("invalid")
-        ready = false;
+       
     }
 })
 
 email.addEventListener("input", () =>{
-  
-    if(email.value.includes("@") && email.value.length >= 2){
-        emailError.hidden = true;
-        email.classList.remove("invalid")
+    
+    if(email.value.includes("@") && email.value.length >= 6){
         email.classList.add("valid");
-        ready = true;
+        email.classList.remove("invalid");
+        emailError.hidden = true;
+        
     }
     else {
+        email.classList.remove("valid");
+        email.classList.add("invalid");
         emailError.hidden = false;
-        email.classList.remove("valid")
-        email.classList.add("invalid")
-        ready = false;
+        
     }
 })
 
+
+telInput.addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/\D/g, '');
+});
+
 password.addEventListener("input", () =>{
     if(password.value.length >= 8){
-        passwordError.hidden = true;
-        password.classList.remove("invalid")
         password.classList.add("valid");
-        ready = true;
+        password.classList.remove("invalid");
+        passwordError.hidden = true;
+       
     }
     else {
-        password.classList.remove("valid")
+        password.classList.add("invalid");
+        password.classList.remove("valid");
         passwordError.hidden = false;
-        password.classList.add("invalid")
-        ready = false;
+      
     }
 })
 
 confirmPassword.addEventListener("input", () =>{
     if(password.value !== confirmPassword.value){
+        confirmPassword.classList.add("invalid");
         confirmPasswordError.hidden = false;
-        confirmPassword.classList.add("invalid")
-        ready = false;
-
+        
+        
     }
     else if (password.value === confirmPassword.value){
+        confirmPassword.classList.add("valid");
+        confirmPassword.classList.remove("invalid");
         confirmPasswordError.hidden = true;
-        confirmPassword.classList.remove("invalid")
-        confirmPassword.classList.add("valid")
-        ready = true;
+   
     }
+})
+button.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const hasErrors = Array.from(errorMessages).some(msg => !msg.hidden);
+    const hasEmptyFields = Array.from(inputs).some(input => input.value.trim() === "");
+
+    if(hasErrors){
+        alert("Please fix the errors before submitting");
+    }else if (hasEmptyFields){
+        alert("please fill out the form before submiting")
+    }else {
+        alert("Form looks good! Submitting now...");
+        location.reload();
+       
+    }
+ 
 })

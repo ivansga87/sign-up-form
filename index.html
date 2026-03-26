@@ -21,7 +21,21 @@
   <body>
     <div id="card">
       <div id="imageContainer">
-        <img id="plantsImg" src="plants-pic.jpg" alt="" />
+        <figure>
+          <img id="plantsImg" src="plants-pic.jpg" alt="green leaf plants background" />
+          <figcaption>
+            Photo by
+            <a
+              href="https://unsplash.com/@haliewestphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Halie West</a
+            >
+            on
+            <a
+              href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Unsplash</a
+            >
+          </figcaption>
+        </figure>
         <div id="banner">
           <img id="logo" src="odin-lined.png" alt="" />
           <p>ODIN</p>
@@ -45,30 +59,50 @@
               <div class="formSection">
                 <label for="name">FIRST NAME</label>
                 <input type="text" id="name" required />
-                <p id="nameError" hidden>Must be at least 2 characters</p>
+                <p class="error-text" id="nameError" hidden>
+                  Must be at least 2 characters
+                </p>
                 <label for="email">EMAIL</label>
-                <input type="email" id="email" required placeholder="email@domain.com"/>
-                <p id="emailError" hidden>Please use correct format</p>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  placeholder="email@domain.com"
+                />
+                <p class="error-text" id="emailError" hidden>
+                  Must be a valid email address
+                </p>
                 <label for="password">PASSWORD</label>
                 <input type="password" id="password" />
-                <p id="passwordError" hidden>Must be at least 8 characters long</p>
+                <p class="error-text" id="passwordError" hidden>
+                  Must be at least 8 characters long
+                </p>
               </div>
               <div class="formSection">
                 <label for="lastName">LAST NAME</label>
-                <input type="text" id="lastName" required/>
-                <p id="lastNameError" hidden>Must be at least 2 charaters</p>
+                <input type="text" id="lastName" required />
+                <p class="error-text" id="lastNameError" hidden>
+                  Must be at least 2 charaters
+                </p>
                 <label for="phone">PHONE NUMBER</label>
-                <input type="tel" id="phone" placeholder="(123) 345-6789" />
+                <input
+                  type="tel"
+                  id="phone"
+                  pattern="[0-9]*"
+                  placeholder="(123) 345-6789"
+                />
                 <p id="phoneError" hidden>Please use correct format</p>
                 <label for="confirmPassword">CONFIRM PASSWORD</label>
                 <input type="password" id="confirmPassword" required />
-                <p id="confirmPasswordError" hidden>Passwords don't match</p>
+                <p class="error-text" id="confirmPasswordError" hidden>
+                  Passwords don't match
+                </p>
               </div>
             </div>
           </form>
         </div>
         <div class="container" id="buttonContainer">
-          <button form="myForm" type="submit" >Create Account</button>
+          <button form="myForm" type="submit">Create Account</button>
           <p>Already have an account? <a href="#index.html">Log in</a></p>
         </div>
       </div>

@@ -1,0 +1,10 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
+
+# If you're using a local live server or similar
+.env
+*.log
