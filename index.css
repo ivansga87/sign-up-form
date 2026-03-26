@@ -1,25 +1,25 @@
-:root{
-    font-family: Roboto;
-    --box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
-    --form-text-color: rgb(0, 0 ,0, .8);
-    --accent-color: #596D48;
-    --background-color: rgba(150, 150, 150, 0.05)
+:root {
+  font-family: Roboto;
+  --box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+  --form-text-color: rgb(0, 0, 0, 0.8);
+  --accent-color: #596d48;
+  --background-color: rgba(150, 150, 150, 0.05);
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color:rgb(0, 0 ,0, .95);
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.95);
 }
 #card {
   display: flex;
-  max-width:1100px;
+  max-width: 1100px;
   width: 100vw;
 }
 
@@ -28,14 +28,12 @@ body{
   position: relative;
   height: 700px;
   width: 365px;
-  /* overflow: hidden; */
 }
 
 #plantsImg {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
-  object-position: center; 
+  object-fit: cover;
 }
 
 #banner {
@@ -48,41 +46,37 @@ body{
   top: 150px;
   align-items: center;
   justify-content: center;
-  
-  
 }
 
-#banner>p{
-    margin: 0px;
-    font-family: Caesar Dressing;
-    font-size: 60px;
+#banner > p {
+  margin: 0px;
+  font-family: Caesar Dressing;
+  font-size: 60px;
 }
 
-#logo{
-    height: 90px;
-    
+#logo {
+  height: 90px;
 }
 
 #form {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    background-color: white;
-    color:var(--form-text-color);
-
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: white;
+  color: var(--form-text-color);
 }
 #messageContainer {
-    height: 260px;
+  height: 260px;
 }
 
 #messageContainer,
 #buttonContainer {
-    background-color: var(--background-color);
+  background-color: var(--background-color);
 }
 
-#messageContainer>p {
-    font-size: 17px;
-    font-weight: 600;
+#messageContainer > p {
+  font-size: 17px;
+  font-weight: 600;
 }
 
 #messageContainer p:nth-of-type(1) {
@@ -92,103 +86,81 @@ body{
 #messageContainer p:nth-of-type(2) {
     margin-top: 25px;
 }
-#messageContainer p>span {
+#messageContainer p > span {
     font-style: italic;
 }
 
-
 #formFields {
-    background-color: white;
     box-shadow: var(--box-shadow);
-    
 }
 
-#title {
+h1 {
+  font-size: 18px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
-
-
-#inputs {
-  display: flex;
-  gap: 20px;
-  font-size: 12px;
-
- }
 
 .formSection {
   display: flex;
   flex-direction: column;
 }
 
+#inputsContainer {
+  display: flex;
+  gap: 20px;
+  font-size: 12px;
+}
 
 input {
-    margin-bottom: 20px;
-    margin-left: 25px;
-    border-radius: 3px;
-    border: 1px solid rgba(150, 150, 150, 0.5);
-    
+  margin-bottom: 20px;
+  margin-left: 25px;
+  border-radius: 3px;
+  border: 1px solid rgba(150, 150, 150, 0.5);
 }
 
-input:focus{
-    outline: 1px solid blue;
-    box-shadow: var(--box-shadow);
+input:focus {
+  outline: 1px solid blue;
+  box-shadow: var(--box-shadow);
 }
 
-#nameError{
-    font-size: 8px;
-    margin-top: 32px;
-    position:absolute;
-    color:red;
+#nameError,
+#lastNameError {
+  font-size: 8px;
+  margin-top: 32px;
+  position: absolute;
+  color: red;
 }
 
-#lastNameError{
-    font-size: 8px;
-    margin-top: 32px;
-    position:absolute;
-    color:red;
+#emailError,
+#phoneError {
+  font-size: 8px;
+  margin-top: 82px;
+  position: absolute;
+  color: red;
 }
 
-#emailError{
-    font-size: 8px;
-    margin-top: 82px;
-    position:absolute;
-    color:red;
+#passwordError,
+#confirmPasswordError {
+  font-size: 8px;
+  margin-top: 132px;
+  position: absolute;
+  color: red;
 }
 
-#phoneError{
-    font-size: 8px;
-    margin-top: 82px;
-    position:absolute;
-    color:red;
+.invalid {
+  outline: 1.5px solid red;
 }
 
-#passwordError{
-    font-size: 8px;
-    margin-top: 132px;
-    position:absolute;
-    color:red;
-}
-#confirmPasswordError{
-    font-size: 8px;
-    margin-top: 132px;
-    position:absolute;
-    color:red;
-}
-.invalid{
-    outline: 1.5px solid red;
-}
-
-.valid{
-    outline: 1.5px solid var(--accent-color)
+.valid {
+  outline: 1.5px solid var(--accent-color);
 }
 
 label {
   margin-left: 25px;
   font-size: 8px;
-  letter-spacing: .25ch;
+  letter-spacing: 0.25ch;
   font-weight: 500;
   margin-bottom: 2px;
-  
 }
 
 p,
@@ -197,20 +169,14 @@ button {
   margin-left: 25px;
 }
 
-#buttonContainer{
-    flex-grow: 1;
+#buttonContainer {
+  flex-grow: 1;
 }
 #buttonContainer p {
   font-size: 12px;
   font-weight: 500;
- 
 }
 
-h1 {
-  font-size: 18px;
-  margin-top: 10px;
-  
-}
 
 button {
   margin-top: 30px;
@@ -224,7 +190,6 @@ button {
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
   font-weight: 500;
   cursor: pointer;
-  
 }
 
 a {
@@ -233,8 +198,8 @@ a {
 }
 
 figcaption {
-    background: black;
-    color: white;
-    position: absolute;
-    bottom: 0px;
+  background: black;
+  color: white;
+  position: absolute;
+  bottom: 0px;
 }
