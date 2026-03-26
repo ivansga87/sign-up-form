@@ -1,12 +1,13 @@
 const firstName = document.querySelector("#name");
 const lastName = document.querySelector("#lastName");
 const email = document.querySelector("#email")
-const telInput = document.querySelector('input[type="tel"]');
+const phone = document.querySelector("#phone");
 const password = document.querySelector("#password")
 const confirmPassword = document.querySelector("#confirmPassword")
 const firstNameError = document.querySelector("#nameError")
 const lastNameError = document.querySelector("#lastNameError")
 const emailError = document.querySelector("#emailError")
+const phoneError = document.querySelector("#phoneError")
 const passwordError = document.querySelector("#passwordError")
 const confirmPasswordError = document.querySelector("#confirmPasswordError")
 const button = document.querySelector("button")
@@ -53,19 +54,37 @@ email.addEventListener("input", () =>{
         
     }
     else {
-        email.classList.remove("valid");
         email.classList.add("invalid");
+        email.classList.remove("valid");
         emailError.hidden = false;
         
     }
 })
 
 
-telInput.addEventListener('input', (e) => {
+phone.addEventListener('input', (e) => {
     e.target.value = e.target.value.replace(/\D/g, '');
+    if(!e.target.value || e.target.value.length <= 8){
+        phone.classList.add("invalid")
+        phone.classList.remove("valid")
+        phoneError.hidden = false;
+        
+    }
+    else if(e.target.value.length > 8){
+        phone.classList.add("valid")
+        phone.classList.remove("invalid")
+        phoneError.hidden = true;
+    }
 });
 
 password.addEventListener("input", () =>{
+     if(password.value !== confirmPassword.value){
+        confirmPassword.classList.add("invalid");
+        confirmPassword.classList.remove("valid")
+        confirmPasswordError.hidden = false;
+        
+        
+    }
     if(password.value.length >= 8){
         password.classList.add("valid");
         password.classList.remove("invalid");

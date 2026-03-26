@@ -51,7 +51,7 @@
           <p>You <span>know</span> you want to.</p>
         </div>
         <div class="container" id="formFields">
-          <form id="myForm" action="post">
+          <form id="myForm" action="#">
             <div id="title">
               <h1>Let's do this!</h1>
             </div>
@@ -89,9 +89,10 @@
                   type="tel"
                   id="phone"
                   pattern="[0-9]*"
-                  placeholder="(123) 345-6789"
+                  placeholder="1233456789"
+                  maxlength="9"
                 />
-                <p id="phoneError" hidden>Please use correct format</p>
+                <p class="error-text" id="phoneError" hidden>Please use correct format</p>
                 <label for="confirmPassword">CONFIRM PASSWORD</label>
                 <input type="password" id="confirmPassword" required />
                 <p class="error-text" id="confirmPasswordError" hidden>
