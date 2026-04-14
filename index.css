@@ -103,6 +103,7 @@ h1 {
 .formSection {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 #inputsContainer {
@@ -126,7 +127,7 @@ input:focus {
 #nameError,
 #lastNameError {
   font-size: 8px;
-  margin-top: 3%;
+  top:40px;
   position: absolute;
   color: red;
 }
@@ -134,7 +135,7 @@ input:focus {
 #emailError,
 #phoneError {
   font-size: 8px;
-  margin-top: 7%;
+  margin-top: 95px;
   position: absolute;
   color: red;
 }
@@ -142,7 +143,7 @@ input:focus {
 #passwordError,
 #confirmPasswordError {
   font-size: 8px;
-  margin-top: 11%;
+  margin-top: 150px;
   position: absolute;
   color: red;
 }
