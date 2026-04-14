@@ -126,7 +126,7 @@ input:focus {
 #nameError,
 #lastNameError {
   font-size: 8px;
-  margin-top: 32px;
+  margin-top: 3%;
   position: absolute;
   color: red;
 }
@@ -134,7 +134,7 @@ input:focus {
 #emailError,
 #phoneError {
   font-size: 8px;
-  margin-top: 82px;
+  margin-top: 7%;
   position: absolute;
   color: red;
 }
@@ -142,7 +142,7 @@ input:focus {
 #passwordError,
 #confirmPasswordError {
   font-size: 8px;
-  margin-top: 132px;
+  margin-top: 11%;
   position: absolute;
   color: red;
 }
